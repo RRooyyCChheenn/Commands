@@ -10,7 +10,7 @@ done
 ## 1. Conda Environment
 ### Steps:
 ```
-scp -r /data/xiangru/anaconda3/envs/raft xiangru@166.111.54.115:/data/xiangru/anaconda3/envs/
+scp -r /data/xiangru/anaconda3/envs/raft xiangru@remotehost:/data/xiangru/anaconda3/envs/
 ```
 ### Note: 
 1. "/data/xiangru/anaconda3/envs/raft", this whole raft folder will be transfered
@@ -19,7 +19,7 @@ scp -r /data/xiangru/anaconda3/envs/raft xiangru@166.111.54.115:/data/xiangru/an
 # Transfer Data
 ### Steps:
 ```
-scp -r /data/xiangru/anaconda3/envs/raft xiangru@166.111.54.115:/data/xiangru/anaconda3/envs/
+scp -r /data/xiangru/anaconda3/envs/raft xiangru@remotehost:/data/xiangru/anaconda3/envs/
 ```
 ### Note: 
 1. "/data/xiangru/anaconda3/envs/raft", this whole raft folder will be transfered
