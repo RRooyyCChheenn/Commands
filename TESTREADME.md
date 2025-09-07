@@ -31,5 +31,6 @@ pip install tianmoucv
 pip install jupyter notebook
 
 run in the VScode
-```bash
+```
+### 双通路融合视频推理
 pip install -r requirements.txt
