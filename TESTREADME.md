@@ -37,6 +37,6 @@ cd /TMC_algorithms/TMC_fusion
 conda create -n [YOUR ENV NAME] --python=3.10
 sh install.sh
 
-
+```
 
 ## 4. 运行指南
