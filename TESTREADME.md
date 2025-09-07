@@ -32,7 +32,11 @@ pip install jupyter notebook
 
 ```
 ### 双通路融合视频推理
-pip install -r requirements.txt
+```bash
+cd /TMC_algorithms/TMC_fusion
+conda create -n [YOUR ENV NAME] --python=3.10
+sh install.sh
+
 
 
 ## 4. 运行指南
