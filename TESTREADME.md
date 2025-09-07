@@ -26,15 +26,10 @@ conda create -n [YOUR ENV NAME] --python=3.10
 conda activate [YOUR ENV NAME]
 conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
 
-```bash
 pip install tianmoucv
 
-```bash
 pip install jupyter notebook
 
-```bash
 run in the VScode
-
-```bash
 ```bash
 pip install -r requirements.txt
