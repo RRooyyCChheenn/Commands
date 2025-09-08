@@ -49,5 +49,5 @@ cd ./TMC_algorithms
 conda activate [YOUR OPTICAL FLOW ENV]
 jupyter notebook
 ```
-Then you could run ./TMC_algorithms/TMC_optical_flow/opticalflow_spynet.ipynb directly.
+然后可以找到目录下的 opticalflow_spynet.ipynb 直接运行即可。
 
