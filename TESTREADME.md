@@ -42,3 +42,12 @@ sh install.sh
 ---
 
 ## 4. 运行指南
+
+### 光流估计
+```bash
+cd ./TMC_algorithms
+conda activate [YOUR OPTICAL FLOW ENV]
+jupyter notebook
+```
+Then you could run ./TMC_algorithms/TMC_optical_flow/opticalflow_spynet.ipynb directly.
+
