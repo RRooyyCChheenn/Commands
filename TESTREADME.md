@@ -1,61 +1,100 @@
-# 基于Tianmouc实现的智能算法
-> 基于Tianmouc实现的光流估计
-> 基于Tianmouc实现的双通路融合推理
+# 基于 Tianmouc 的智能算法实现
+
+> 🚀 本项目基于天眸芯的双通路数据，开发了光流估计与双通路融合推理算法，旨在充分发挥硬件潜力，支持开放世界的动态场景理解。
 
 ---
 
 ## 1. 项目简介
-本项目通过利用天眸芯的双通路数据，开发了适配的智能算法，释放硬件潜力，这是实现的两个智能算法，分别是光流估计，以及双通路融合视频推理，本文件里，包含了可运行程序，可视化结果，以及运行手册
- 
-- **项目目标**：为天眸芯硬件搭载智能算法，从而实现开放世界的光流估计以及视频推理
+
+本项目通过对 **Tianmouc 硬件** 输出的 AOP / COP 通路数据进行处理，实现了以下两个核心算法：
+
+* **光流估计**：利用 AOP 通路实现快速光流估计
+* **双通路融合推理**：基于 AOP + COP 双路数据实现视频级别的语义推理
+
+项目内包含：
+
+* 可运行的程序与 Notebook
+* 可视化结果
+* 实验数据与运行手册
+
+**项目目标**：在天眸芯硬件上部署智能算法，支持开放世界的光流估计与视频推理。
 
 ---
 
 ## 2. 功能特性
-- ✅ AOP通路实现光流估计 
-- ✅ AOP+COP双路融合实现视频推理
 
+* ✅ 基于 AOP 的光流估计
+* ✅ 基于 AOP + COP 的双路融合视频推理
+* ✅ 支持数据读取与可视化
+* ✅ 提供预训练模型与 Demo
 
 ---
 
-## 3. 环境依赖
+## 3. 目录结构
+
+项目的主要目录结构如下：
+
+```bash
+TMC_algorithms/
+├── datareader/          # 数据读取与预处理
+│   ├── lib
+│   ├── scripts
+│   └── tools/rod_decode_pybind
+├── tianmoucv/           # Tianmouc Python 封装库
+├── TMC_fusion/          # 双通路融合推理算法
+│   ├── data/            # 实验数据与检查点
+│   ├── demo/            # 融合推理 Demo
+│   ├── KalmanTrackor/   # 目标跟踪
+│   ├── YOLOPv1/         # 基于 YOLOPv1 的检测模块
+│   └── YOLOv5/          # 基于 YOLOv5 的检测模块
+└── TMC_optical_flow/    # 光流估计算法
+    ├── data/            # Optical Flow 数据集
+    └── demo/            # 光流估计 Demo
+```
+
+---
+
+## 4. 环境依赖
 
 ### 光流估计
+
 ```bash
-conda create -n [YOUR ENV NAME] --python=3.10
-conda activate [YOUR ENV NAME]
+conda create -n [YOUR FLOW ENV] --python=3.10
+conda activate [YOUR FLOW ENV]
 conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
 
 pip install tianmoucv
-
 pip install jupyter notebook
-
 ```
+
 ### 双通路融合视频推理
+
 ```bash
 cd ./TMC_algorithms/TMC_fusion
-conda create -n [YOUR ENV NAME] --python=3.10
+conda create -n [YOUR FUSION ENV] --python=3.10
 sh install.sh
-
 ```
 
 ---
 
-## 4. 运行指南
+## 5. 运行指南
 
 ### 光流估计
+
 ```bash
 cd ./TMC_algorithms
-conda activate [YOUR OPTICAL FLOW ENV]
+conda activate [YOUR FLOW ENV]
 jupyter notebook
 ```
-然后可以找到目录下的 opticalflow_spynet.ipynb 直接运行即可。
+
+运行 `opticalflow_spynet.ipynb` 以复现光流估计结果。
 
 ### 双通路融合视频推理
+
 ```bash
 cd ./TMC_algorithms
 conda activate [YOUR FUSION ENV]
 jupyter notebook
 ```
-然后可以找到目录下的 Evaluation_complex.ipynb 直接运行即可。
 
+运行 `Evaluation_complex.ipynb` 以复现视频推理结果。
