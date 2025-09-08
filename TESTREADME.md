@@ -51,3 +51,11 @@ jupyter notebook
 ```
 然后可以找到目录下的 opticalflow_spynet.ipynb 直接运行即可。
 
+### 双通路融合视频推理
+```bash
+cd ./TMC_algorithms
+conda activate [YOUR FUSION ENV]
+jupyter notebook
+```
+然后可以找到目录下的 Evaluation_complex.ipynb 直接运行即可。
+
